@@ -17,6 +17,13 @@ int main() {
     assert(size(37) == 'S');
     assert(size(40) == 'M');
     assert(size(43) == 'L');
+    //Additional test cases
+    assert(size(-2) == 'Invalid');
+    assert(size(37,56) == 'S');
+    assert(size(40,58) == 'M');
+    assert(size(43,61) == 'L');
+    assert(size(243,261) == 'Invalid');
+    
     printf("All is well (maybe!)\n");
     return 0;
 }
