@@ -17,7 +17,6 @@ int main() {
     int result = printColorMap();
     assert(result == 25);
     //Additonal test cases
-    assert();
     printf("All is well (maybe!)\n");
     return 0;
 }
