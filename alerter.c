@@ -8,7 +8,7 @@ int networkAlertStub(float celcius) {
     // Return 200 for ok
     // Return 500 for not-ok
     // stub always succeeds and returns 200
-    if (celsius < -273.15 && celsius > 1000)
+    if (celcius < -273.15 && celcius > 1000)
         return 500;
     else 
         return 200;
