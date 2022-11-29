@@ -2,11 +2,10 @@
 #include <assert.h>
 
 #define TEST_ENVIRONMENT 1
-#define PROD_ENVIRONMENT 0
 
 int alertFailureCount = 0;
 
-if(TEST_ENVIRONMENT) {
+#ifdef (TEST_ENVIRONMENT) {
     int networkAlertStub(float celcius) {
         printf("ALERT: Temperature is %.1f celcius.\n", celcius);
         // Return 200 for ok
@@ -18,20 +17,25 @@ if(TEST_ENVIRONMENT) {
             return 200;
     }
 }
+#else
+ // Define the actual networkAlert function
 
 void alertInCelcius(float farenheit) {
     float celcius = (farenheit - 32) * 5 / 9;
-    if(TEST_ENVIRONMENT) {
+    if(TEST_ENVIRONMENT) 
         int returnCode = networkAlertStub(celcius);
-        if (returnCode != 200) {
+    else 
+          //Call actual networkAlert function
+        
+     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
         // let us keep a count of failures to report
         // However, this code doesn't count failures!
         // Add a test below to catch this bug. Alter the stub above, if needed.
         alertFailureCount += 1;
+        //use assert functions only in test environment
         assert(alertFailureCount == 0);
-      }
-    }
+     }
 }
 
 int main() {
