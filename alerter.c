@@ -6,7 +6,7 @@
 
 int alertFailureCount = 0;
 
-#ifdef TEST_ENVIRONMENT {
+#ifdef TEST_ENVIRONMENT 
     int networkAlertStub(float celcius) {
         printf("ALERT: Temperature is %.1f celcius.\n", celcius);
         // Return 200 for ok
@@ -17,16 +17,13 @@ int alertFailureCount = 0;
         else 
             return 200;
     }
-}
-#else
- // Define the actual networkAlert function
 #endif
 
 void alertInCelcius(float farenheit) {
     float celcius = (farenheit - 32) * 5 / 9;
-    if(TEST_ENVIRONMENT) 
+    #ifdef TEST_ENVIRONMENT
         int returnCode = networkAlertStub(celcius);
-    else 
+    endif 
           //Call actual networkAlert function
         
      if (returnCode != 200) {
