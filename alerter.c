@@ -23,7 +23,7 @@ void alertInCelcius(float farenheit) {
     float celcius = (farenheit - 32) * 5 / 9;
     #ifdef TEST_ENVIRONMENT
         int returnCode = networkAlertStub(celcius);
-    endif 
+    #endif 
           //Call actual networkAlert function
         
      if (returnCode != 200) {
