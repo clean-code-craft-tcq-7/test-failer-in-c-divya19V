@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <assert.h>
 
+//Method to test the printColorMap function
+void formatPrintfInputColorMap (int pairNumber, const char* majorColor, const char* minorColor)
+{
+    const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
+    const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
+   
+    assert(majorColor[i] == majorColor);
+    assert(minorColor[j] == minorColor);
+}
+
 int printColorMap() {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
@@ -9,7 +19,7 @@ int printColorMap() {
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
             printf("%d | %s | %s\n", i * 5 + j, majorColor[i], minorColor[i]);
-            assert(minorColor[i] == minorColor[j]);
+            formatPrintfInputColorMap(i, j, majorColor[i], minorColor[i]);
         }
     }
     return i * j;
@@ -18,7 +28,6 @@ int printColorMap() {
 int main() {
     int result = printColorMap();
     assert(result == 25);
-    //Additonal test cases
     printf("All is well (maybe!)\n");
     return 0;
 }
