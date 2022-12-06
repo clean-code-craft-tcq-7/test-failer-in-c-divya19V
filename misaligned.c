@@ -15,7 +15,7 @@ void formatPrintfInputColorMap (int majorNumberIndex, int minorNumberIndex, cons
     isSingleDigit = (majorNumberIndex * minorNumberIndex) / 10;
     
     //Test case to test single digit and it fails as alignment is not right
-    assert(isSingleDigit, True);
+    assert(isSingleDigit == True);
 }
 
 int printColorMap() {
