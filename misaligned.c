@@ -6,7 +6,7 @@ void formatPrintfInputColorMap (int majorNumberIndex, int minorNumberIndex, cons
 {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
-    boolean isSingleDigit = true;
+    bool isSingleDigit = true;
     
     //Test case to check for proper major and minor colors
     assert(majorColor[majorNumberIndex] == recvMajorColor);
