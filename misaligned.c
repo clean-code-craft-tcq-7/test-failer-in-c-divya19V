@@ -2,13 +2,13 @@
 #include <assert.h>
 
 //Method to test the printColorMap function
-void formatPrintfInputColorMap (int pairNumber, const char* majorColor, const char* minorColor)
+void formatPrintfInputColorMap (int majorNumberIndex, int minorNumberIndex, const char* recvMajorColor, const char* recvMinorColor)
 {
     const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
     const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
    
-    assert(majorColor[i] == majorColor);
-    assert(minorColor[j] == minorColor);
+    assert(majorColor[majorNumberIndex] == recvMajorColor);
+    assert(minorColor[minorNumberIndex] == recvMinorColor);
 }
 
 int printColorMap() {
