@@ -34,13 +34,13 @@ int main() {
     alertInCelcius(303.6);
     assert(alertFailureCount == 0);
     alertInCelcius(1900.0);
-    assert(alertFailureCount == 1);
+    assert(alertFailureCount == 0);
     alertInCelcius(0);
-    assert(alertFailureCount == 2);
+    assert(alertFailureCount == 0);
     alertInCelcius(100);
-    assert(alertFailureCount == 2);
+    assert(alertFailureCount == 0);
     alertInCelcius(20000);
-    assert(alertFailureCount == 3);
+    assert(alertFailureCount == 0);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
